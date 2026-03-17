@@ -1,0 +1,3 @@
+/* html파일에 link로 일괄 적용 */
+nav {background-color: skyblue; font-size:150%; text-align:center;}
+nav a {color: ivory; margin: 10px;}
