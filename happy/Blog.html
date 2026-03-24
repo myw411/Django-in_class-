@@ -9,10 +9,43 @@
 </head>
 
 <body>
-    <nav>
+        <!-- 부트스트랩 사이트에서 네비게이션 바 코드 복붙함 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand text-white" href="#">Meue</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+            <li class="nav-item active">
+                <!-- 링크 연결이 안 됨 #만 붙이면 되는데 안 됨 -->
+                <a class="nav-link text-white" href="./index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="./AboutMe.html">AboutMe</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Blog</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown link
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item text-white" href="#">Habby</a>
+                <a class="dropdown-item text-white" href="#">Study</a>
+                <a class="dropdown-item text-white" href="#">Something else here</a>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- <nav>
         <a href="./index.html">Home</a>
         <a href="./AboutMe.html">About Me</a>
-    </nav>
+    </nav> -->
 
     <h1>Blog</h1>
     <h3>쿠키를 보면 기부니가 좋아져요</h3>
