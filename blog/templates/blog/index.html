@@ -8,8 +8,9 @@
 <body>
     <h1>Blog</h1>
     
-# 데이터 베이스와 템플릿 연동하는 부분
-{% for p in posts %}
+{% comment %} # 데이터 베이스와 템플릿 연동하는 부분
+# posts라고만 쓰면 FBV, object_list라고 쓰면 CBV 방식 {% endcomment %}
+{% for p in object_list %} 
     <hr/>
     <!-- <a>사이에 있는게 제목을 클릭하면 상세 페이지로 이동 가능하게 함 -->
     <h2><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></h2>
