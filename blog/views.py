@@ -10,7 +10,7 @@ class PostList(ListView):
     
 class PostDetail(DetailView):
     model = Post
-    template_name = 'blog/single_post_page.html'
+    template_name = 'blog/post_detail.html'
 
 # # 요거는 FBV 사용할 때 사용
  # # Create your views here.

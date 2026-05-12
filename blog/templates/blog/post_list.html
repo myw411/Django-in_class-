@@ -1,4 +1,4 @@
-{% comment %} <!DOCTYPE html>
+<!-- {% comment %} <!DOCTYPE html> 
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -12,14 +12,14 @@
 # posts라고만 쓰면 FBV, object_list라고 쓰면 CBV 방식 
 {% for p in object_list %} 
     <hr/>
-    <!-- <a>사이에 있는게 제목을 클릭하면 상세 페이지로 이동 가능하게 함 -->
+    // <a>사이에 있는게 제목을 클릭하면 상세 페이지로 이동 가능하게 함
     <h2><a href="{{ p.get_absolute_url }}">{{ p.title }}</a></h2>
     <h4>{{ p.created }}</h4>
     <p>{{ p.content }}</p>
 {% endfor %}
 </body>
 </html>  
-{% endcomment %}
+{% endcomment %} -->
 
 
 <!DOCTYPE html>
@@ -129,14 +129,16 @@
             <div class="row">
                 <!-- Blog entries-->
                 <div class="col-lg-8">
+                    {% for p in post_list %}
                     <!-- Featured blog post-->
                     <div class="card mb-4">
                         <a href="#!"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">January 1, 2023</div>
-                            <h2 class="card-title">Featured Post Title</h2>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                            <a class="btn btn-primary" href="#!">Read more →</a>
+                            <a href="#">작성자 작성 예정</a>
+                            <h2 class="card-title">{{ p.title }}</h2>
+                            <p class="card-text">{{ p.content }}</p>
+                            <a class="btn btn-primary" href="{{ p.get_absolute_url }}">Read more →</a>
                         </div>
                     </div>
                     <!-- Nested row for non-featured blog posts-->
@@ -147,19 +149,9 @@
                                 <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">January 1, 2023</div>
-                                    <h2 class="card-title h4">Post Title</h2>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
-                                    <a class="btn btn-primary" href="#!">Read more →</a>
-                                </div>
-                            </div>
-                            <!-- Blog post-->
-                            <div class="card mb-4">
-                                <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
-                                <div class="card-body">
-                                    <div class="small text-muted">January 1, 2023</div>
-                                    <h2 class="card-title h4">Post Title</h2>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
-                                    <a class="btn btn-primary" href="#!">Read more →</a>
+                                    <h2 class="card-title h4">{{ p.title }}</h2>
+                                    <p class="card-text">{{ p.content }}</p>
+                                    <a class="btn btn-primary" href="{{ p.get_absolute_url }}">Read more →</a>
                                 </div>
                             </div>
                         </div>
@@ -169,23 +161,14 @@
                                 <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
                                 <div class="card-body">
                                     <div class="small text-muted">January 1, 2023</div>
-                                    <h2 class="card-title h4">Post Title</h2>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
-                                    <a class="btn btn-primary" href="#!">Read more →</a>
-                                </div>
-                            </div>
-                            <!-- Blog post-->
-                            <div class="card mb-4">
-                                <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
-                                <div class="card-body">
-                                    <div class="small text-muted">January 1, 2023</div>
-                                    <h2 class="card-title h4">Post Title</h2>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
-                                    <a class="btn btn-primary" href="#!">Read more →</a>
+                                    <h2 class="card-title h4">{{ p.title }}</h2>
+                                    <p class="card-text">{{ p.content }}</p>
+                                    <a class="btn btn-primary" href="{{ p.get_absolute_url }}">Read more →</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                     <!-- Pagination-->
                     <nav aria-label="Pagination">
                         <hr class="my-0" />
